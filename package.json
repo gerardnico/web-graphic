@@ -1,0 +1,20 @@
+{
+  "name": "D3",
+  "version": "1.0.0",
+  "description": "A D3 hot reload dev environment",
+  "scripts": {
+    "start": "webpack-dev-server --progress --devtool source-map"
+  },
+  "author": "Nicolas Gerard",
+  "license": "MIT",
+  "dependencies": {
+    "d3": "^4.10.2"
+  },
+  "devDependencies": {
+    "copy-webpack-plugin": "^4.0.1",
+    "eslint": "^4.7.2",
+    "webpack": "^3.6.0",
+    "webpack-dev-server": "^2.8.2",
+    "write-file-webpack-plugin": "^4.1.0"
+  }
+}
