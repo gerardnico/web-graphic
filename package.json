@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "A D3 hot reload dev environment",
   "scripts": {
-    "start": "webpack-dev-server --progress --devtool source-map"
+    "start": "webpack-dev-server --progress"
   },
   "author": "Nicolas Gerard",
   "license": "MIT",

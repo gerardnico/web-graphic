@@ -4,17 +4,15 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
-
         {
             "type": "chrome",
             "request": "attach",
             "name": "Attach to Chrome",
             "port": 9222,
             "url": "http://localhost:9000",
-            "webRoot": "${workspaceRoot}\\dist", //  where your source files are located.
-            "trace": true,
-            "sourceMaps": true,
-            "sourceMapPathOverrides": { "webpack:///src/*": "${workspaceRoot}/src/*" }
+            // webRoot to the directory that files are served from
+            // webRoot is used to resolve urls (like "http://localhost/app.js") to a file on disk (like "/Users/me/project/app.js")
+            "webRoot": "${workspaceRoot}/src"
         }
     ]
 }
