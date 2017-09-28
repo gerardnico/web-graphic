@@ -66,4 +66,3 @@ With Visual Studio Code (VsCode)
 ### Hot Reloading
 
 The WebPack dev server has a live reloading capability.
-Each time that 
