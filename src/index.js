@@ -23,22 +23,36 @@ let svg = d3.select("body").append("svg")
     .datum(data)
     .attr('width', width + margin.left + margin.right)
     .attr('height', height + margin.top + margin.bottom)
-    .attr("class", "area")
-    .append("g")
-    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-svg.append("g")
+svg.append("desc")
+    .html("A description")
+
+// To give a backgrond color
+// svg.append("rect")
+//     .attr("class", "background")
+//     .attr('width',width + margin.left + margin.right)
+//     .attr('height',height + margin.top + margin.bottom)
+//     .attr('fill','#dff0d8')
+
+svg.append("style")
+    .text(`
+        svg { background-color: #dff0d8}
+        .line { fill: none; stroke: steelblue; stroke-width: 1.5px}
+        .dot { fill: white; stroke: steelblue; stroke-width: 1.5px}
+        `)
+        
+
+let graph = svg.append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
+
+graph.append("g")
     .attr("class", "axis axis--x")
     .attr("transform", "translate(0," + height + ")")
     .call(d3.axisBottom(x));
 
-svg.append("g")
+graph.append("g")
     .attr("class", "axis axis--y")
     .call(d3.axisLeft(y));
-
-svg.append("path")
-    .attr("class", "line")
-    .attr("d", line);
 
 // Add the line
 // if the f defined returns false/null the element is skipped
@@ -48,12 +62,12 @@ var line = d3.line()
     .x(function(d) { return x(d.x); })
     .y(function(d) { return y(d.y); });
 
-svg.append("path")
+graph.append("path")
     .attr("class", "line")
     .attr("d", line);
 
 // Add dots at each point
-svg.selectAll(".dot")
+graph.selectAll(".dot")
     .data(data.filter(function(d) { return d; }))
     .enter().append("circle")
       .attr("class", "dot")
