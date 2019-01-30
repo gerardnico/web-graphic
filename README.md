@@ -1,20 +1,25 @@
-# Create D3 App
+# Web Graphic
 
 ## Introduction
-This project is an attempt to create an dev environment for D3.
 
 A dev environment must deliver:
   * API documentation (of the dependency library)
   * debugger capability
   * hot reloading (no need to hit F5 to refresh the page)
 
+The visuals are in the [dist directory](./dist)
 
-## Pre-requisites
+## Steps
 
-### Webpack Dev Server
+### Install the dependencies
 
-Start the WebPack Dev Server
+```bash
+npm install . 
+```
 
+### Start the WebPack Dev Server
+
+  * Start the [Web Pack Dev Server](https://gerardnico.com/lang/javascript/webpack/webpack-dev-server)
 ```bash
 npm start
 ```
@@ -63,6 +68,4 @@ With Visual Studio Code (VsCode)
 
 ![Alt text](./debug_webpack_vscode.png)
 
-### Hot Reloading
 
-The WebPack dev server has a live reloading capability.

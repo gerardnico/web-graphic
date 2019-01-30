@@ -1,20 +1,23 @@
 {
-  "name": "D3",
+  "name": "web-graphic",
   "version": "1.0.0",
-  "description": "A D3 hot reload dev environment",
+  "description": "Web Graphic",
   "scripts": {
-    "start": "webpack-dev-server --progress"
+    "start": "webpack-dev-server --progress",
+    "eslint": "eslint src"
   },
   "author": "Nicolas Gerard",
   "license": "MIT",
+  "module": "src/index.js",  // Define the location of this module for import
   "dependencies": {
     "d3": "^4.10.2"
   },
   "devDependencies": {
     "copy-webpack-plugin": "^4.0.1",
-    "eslint": "^4.7.2",
     "webpack": "^3.6.0",
     "webpack-dev-server": "^2.8.2",
-    "write-file-webpack-plugin": "^4.1.0"
+    "write-file-webpack-plugin": "^4.1.0",
+    "eslint": "5",
+    "jsdom": "12"
   }
 }

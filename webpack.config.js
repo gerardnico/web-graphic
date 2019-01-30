@@ -10,6 +10,13 @@ const paths = {
 }
 
 module.exports = {
+
+    // https://github.com/d3/d3/wiki#supported-environments
+    // If you are using a bundler, make sure your bundler is configured to consume the modules entry point in the package.json.
+    // https://webpack.js.org/configuration/resolve/#resolve-mainfields
+    resolve: {
+        mainFields: ['module', 'browser', 'main']
+    },
     // These are the "entry points" to our application.
     // This means they will be the "root" imports that are included in JS bundle.
     entry: ['./src/index.js'],
