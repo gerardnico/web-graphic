@@ -3,15 +3,21 @@ import  * as d3 from "d3";
 
 export default function fn(element){
 
-    var data = d3.range(40).map(function(i) {
-        return i % 5 ? {x: i / 39, y: (Math.sin(i / 3) + 2) / 4} : null;
-    });
+    // Rayon of the ball (pixel)?
+    let rayon = "20";
 
     // Chart Area
     var margin = {top: 40, right: 40, bottom: 40, left: 40},
     width = 700 - margin.left - margin.right,
     height = 400 - margin.top - margin.bottom;
 
+    var data = d3.range(9).map(function(i) {
+        return { 
+            x: 0.1 + i*0.1 , 
+            y: 0 + rayon/height ,
+            i: i 
+        } ;
+    });
 
     let x = d3.scaleLinear()
         .range([0, width])
@@ -31,7 +37,6 @@ export default function fn(element){
     svg.append("style")
         .text(`
             svg { background-color: #dff0d8}
-            .line { fill: none; stroke: steelblue; stroke-width: 1.5px}
             .dot { fill: white; stroke: steelblue; stroke-width: 1.5px}
             `)
             
@@ -51,14 +56,29 @@ export default function fn(element){
         graph.append("g")
         .attr("class", "axis axis--y")
         .call(d3.axisLeft(y));
-
-    graph.selectAll(".dot")
+    
+    let balls = graph.selectAll(".dot")
         .data(data.filter(function(d) { return d; }))
         .enter().append("circle")
         .attr("class", "dot")
         .attr("cx", function(d) { return x(d.x); })
         .attr("cy", function(d) { return y(d.y); })
-        .attr("r", 3.5);
+        .attr("r", rayon)
+    
+        // Animation        
+    balls.transition()
+        .duration(1500)
+        .on("start", function bounce() {
+            d3.active(this)
+                .attr("cy", function(d) { return y( d.i % 2 == 0 ? 1 : 0.6); })
+                .transition()
+                .duration(2000)
+                .ease(d3.easeBounceOut)
+                .attr("cy", function(d) { return y(d.y); })
+                .transition()
+                .duration(0)
+                .on("start", bounce);
+          });;
 
 
 }
