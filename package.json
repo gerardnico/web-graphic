@@ -3,12 +3,15 @@
   "version": "1.0.0",
   "description": "Web Graphic",
   "scripts": {
-    "start": "webpack-dev-server --progress",
-    "eslint": "eslint src"
+    "start": "webpack-dev-server --progress --open",
+    "eslint": "eslint src",
+    "build": "webpack",
+    "watch": "webpack --watch",
+    "test": "jest"
   },
   "author": "Nicolas Gerard",
   "license": "MIT",
-  "module": "src/index.js",  // Define the location of this module for import
+  "module": "src/index.js",  
   "dependencies": {
     "d3": "^4.10.2"
   },

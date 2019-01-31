@@ -22,7 +22,10 @@ module.exports = {
     entry: ['./src/index.js'],
     // The output key describes the wanted output
     output: {
-        filename: 'bundle.js',
+        library: "world",
+        libraryTarget: "umd",
+        umdNamedDefine: true,
+        filename: 'world.js',
         // The build path
         path: paths.dist,
         // Add /* filename */ comments to generated require()s in the output.
@@ -31,6 +34,10 @@ module.exports = {
         // Point sourcemap entries to original disk location
         devtoolModuleFilenameTemplate: info =>
             path.resolve(info.absoluteResourcePath)
+    },
+    // No d3 in the bundle
+    externals: {
+        d3: 'd3'
     },
     // The dev server description
     devServer: {
