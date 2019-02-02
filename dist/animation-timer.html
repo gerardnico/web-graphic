@@ -1,0 +1,55 @@
+<html>
+
+<head>
+    <title>Balls eased</title>
+    <script src="https://unpkg.com/d3@4.10.2"></script>
+    <script src="world.js"></script>
+</head>
+
+<body>
+    <h2>Balls eased</h2>
+    <p>This balls are animated with a <a href="https://github.com/d3/d3-ease">eased function</a> inside a <a href="https://github.com/d3/d3-timer">d3-timer</a></p>
+    <p>Internally, it uses <a href="https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame">requestAnimationFrame</a>   for fluid animation (if available), switching to <a ref="https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/setTimeout">setTimeout</a> for delays longer than 24ms.</p>
+    <br>
+    <p>
+        <label>Ease Type:</label>
+        <select id="ease-type">
+            <option selected value="linear">linear</option>
+            <option value="quadIn">quadIn</option>
+            <option value="quadOut">quadOut</option>
+            <option value="quadInOut">quadInOut</option>
+            <option value="cubicIn">cubicIn</option>
+            <option value="cubicOut">cubicOut</option>
+            <option value="cubicInOut">cubicInOut</option>
+            <option value="polyIn">polyIn</option>
+            <option value="polyOut">polyOut</option>
+            <option value="polyInOut">polyInOut</option>
+            <option value="sinIn">sinIn</option>
+            <option value="sinOut">sinOut</option>
+            <option value="sinInOut">sinInOut</option>
+            <option value="expIn">expIn</option>
+            <option value="expOut">expOut</option>
+            <option value="expInOut">expInOut</option>
+            <option value="circleIn">circleIn</option>
+            <option value="circleOut">circleOut</option>
+            <option value="circleInOut">circleInOut</option>
+            <option value="bounceIn">bounceIn</option>
+            <option value="bounceOut">bounceOut</option>
+            <option value="bounceInOut">bounceInOut</option>
+            <option value="backIn">backIn</option>
+            <option value="backOut">backOut</option>
+            <option value="backInOut">backInOut</option>
+            <option value="elasticIn">elasticIn</option>
+            <option value="elasticOut">elasticOut</option>
+            <option value="elasticInOut">elasticInOut</option>
+        </select>
+    </p>
+    <script>world.timerAnimation("body")</script>
+    <ul>
+        <li>
+            <a href="index.html">Back to index</a>
+        </li>
+    </ul>
+</body>
+
+</html>

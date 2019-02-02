@@ -6,14 +6,14 @@ export default function fn(element){
     // Line with Missing Data
     // https://bl.ocks.org/mbostock/0533f44f2cfabecc5e3a
 
+    var data = d3.range(40).map(function(i) {
+        return i % 5 ? {x: i / 39, y: (Math.sin(i / 3) + 2) / 4} : null;
+    });
+
     // Chart Area
     var margin = {top: 40, right: 40, bottom: 40, left: 40},
         width = 700 - margin.left - margin.right,
         height = 400 - margin.top - margin.bottom;
-
-    var data = d3.range(40).map(function(i) {
-            return i % 5 ? {x: i / 39, y: (Math.sin(i / 3) + 2) / 4} : null;
-        });
 
     let x = d3.scaleLinear()
         .range([0, width])
@@ -30,13 +30,6 @@ export default function fn(element){
 
     svg.append("desc")
         .html("A description")
-
-    // To give a backgrond color
-    // svg.append("rect")
-    //     .attr("class", "background")
-    //     .attr('width',width + margin.left + margin.right)
-    //     .attr('height',height + margin.top + margin.bottom)
-    //     .attr('fill','#dff0d8')
 
     svg.append("style")
         .text(`
