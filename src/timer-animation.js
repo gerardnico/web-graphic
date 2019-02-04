@@ -10,14 +10,7 @@ export default function fn(element) {
     var margin = { top: 40, right: 40, bottom: 40, left: 40 },
         width = 700 - margin.left - margin.right,
         height = 400 - margin.top - margin.bottom;
-    let balls = width / rayon;
-    var data = d3.range(balls).map(function (i) {
-        return {
-            x: 0,
-            y: 1,
-            i: i
-        };
-    });
+    
 
     let x = d3.scaleLinear()
         .range([0, width])
@@ -25,6 +18,14 @@ export default function fn(element) {
     let y = d3.scaleLinear()
         .range([height, 0])
 
+    let balls = 12;
+    var data = d3.range(balls).map(function (i) {
+        return {
+            x: 0,
+            y: 1,
+            i: i
+        };
+    });
 
     // https://github.com/d3/d3/wiki#supported-environments
     let svg = d3.select(element).append("svg")
