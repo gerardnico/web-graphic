@@ -69,3 +69,6 @@ With Visual Studio Code (VsCode)
 ![Alt text](./debug_webpack_vscode.png)
 
 
+## TODO
+
+Merge with the [World library](https://github.com/gerardnico/world)

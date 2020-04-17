@@ -11,7 +11,7 @@
   },
   "author": "Nicolas Gerard",
   "license": "MIT",
-  "module": "src/index.js",  
+  "module": "src/index.js",
   "dependencies": {
     "d3": "^4.10.2"
   },
